@@ -1,0 +1,264 @@
+\newpage
+
+\section{Биполярный транзистор}    
+
+Транзистор --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+\\
+Биполярный транзистор --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+\\
+
+\subsection{Типы биполярных транзисторов}
+
+\begin{enumerate}
+	\item \hrulefill
+
+Изображение на схеме \rule{2cm}{0.25pt} транзистора:
+
+\begin{tikzpicture}
+\draw (0,0) rectangle (6,2);
+% $B = 1~\text{Тл}$
+\end{tikzpicture}
+
+	\item \hrulefill
+
+Изображение на схеме \rule{2cm}{0.25pt} транзистора:
+
+\begin{tikzpicture}
+\draw (0,0) rectangle (6,2);
+% $B = 1~\text{Тл}$
+\end{tikzpicture}
+\end{enumerate}
+
+Название контактов биполярного транзистора:
+
+\begin{enumerate}
+	\item \rule{5cm}{0.25pt}
+	\item \rule{5cm}{0.25pt}
+	\item \rule{5cm}{0.25pt}
+\end{enumerate}
+
+\subsection{Принцип работы транзистора}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+
+\draw[line width = 0.3mm] (0,0) rectangle (4,3);
+\draw[line width = 0.3mm] (4,0) rectangle (5,3);
+\draw[line width = 0.3mm] (5,0) rectangle (9,3);
+
+\draw[line width = 0.3mm] (-3,2) -- (0,2);
+
+\draw[line width = 0.3mm] (9,2) -- (12,2);
+
+\draw[line width = 0.3mm] (4.5,-2) -- (4.5,0);
+
+
+\end{tikzpicture}
+\caption{Устройство транзистора}
+\end{figure}
+
+\subsection{Усиление с помощью PNP-транзистора}
+
+\begin{enumerate}
+
+	\item Соберите схему, представленную на рисунке \ref{fig:9.1}. 
+	\item Установите движок реостата крайнее верхнее положение. Укажите направление тока в ней.
+	\item Замкните выключатель К. Плавно перемещайте движок реостата из крайнего верхнего положения вниз. Для пяти положений движка реостата измерьте токи коллектора и базы. Результаты измерений занесите в таблицу \ref{tab:9.1}.
+	\item Рассчитайте коэффициент усиления PNP-транзистора $\beta = I_\text{к}/I_\text{б}$, используя измеренные значения тока коллектора и тока базы. Результаты расчетов занесите в таблицу \ref{tab:9.1}.
+	\item Запишите выводы о зависимости коэффициента усиления PNP-транзистора 		от тока базы.
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \begin{circuitikz}
+    \draw (0,0) node[pnp, tr circle, xscale=-1](Q){};
+    \draw (Q.B) node[above,xshift=1mm,yshift=-1mm] {\text{Б}};
+    \draw (Q.E) node[above, xshift=-3mm, yshift=-5mm] {\text{Э}};
+    \draw (Q.C) node[above,  xshift=-3mm, yshift=-2mm] {\text{К}};
+    
+    \draw (Q.C) to[lamp] ++(0,-2) coordinate(A);
+    \draw (A) -- ++(2,0)  coordinate(F);
+    \draw (A) to[normal open switch, mirror, a=K] ++(-2,0) coordinate(C);
+    \draw (C) to[battery1, invert] ++(0,1)to[battery1, invert] ++(0,1)to[battery1, invert] ++(0,1)to[battery1, invert] ++(0,1) -- ++(2,0) coordinate(D);
+    \draw (Q.E) -- (D) -- ++(2,0) to[pR, name = P, mirror,l = $1~\text{кОм}$] ++(0,-2.46)coordinate(B);
+    \draw (B)to[R, l = $1~\text{кОм}$] (F);
+    \draw (Q.B) -- (P.wiper);
+    %\draw[red, thick] (0.6,2.1) rectangle (4.2,3.8);
+    \end{circuitikz}
+    \caption{PNP-транзистор}
+    \label{fig:9.1}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\caption{Усиление с помощью PNP-транзистора}
+\label{tab:9.1}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\begin{tabular}[c]{@{}c@{}}№\end{tabular} & 
+\begin{tabular}[c]{@{}c@{}}Ток коллектора\\ $I_\text{К}$, А \end{tabular} & \begin{tabular}[c]{@{}c@{}}Ток базы\\ $I_\text{Б}$, А\end{tabular} & 
+\begin{tabular}[c]{@{}c@{}}Коэффициент усиления\\ $\beta$\end{tabular} \\ \hline
+
+1 & & & \\
+\hline
+2 & & & \\
+\hline
+3 & & & \\
+\hline
+4 & & & \\
+\hline
+5 & & & \\
+\hline
+\end{tabular}
+\end{table}
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\subsection{Усиление с помощью NPN-транзистора}
+
+\begin{enumerate}
+
+	\item Соберите схему, представленную на рисунке \ref{fig:9.2}. 
+	\item Установите движок реостата крайнее верхнее положение. Укажите направление тока в ней.
+	\item Замкните выключатель К. Плавно перемещайте движок реостата из крайнего верхнего положения вниз. Для пяти положений движка реостата 	измерьте токи коллектора и базы. Результаты измерений занесите в таблицу \ref{tab:9.2}.
+	\item Рассчитайте коэффициент усиления NPN-транзистора $\beta = I_\text{к}/I_\text{б}$, используя измеренные значения тока коллектора и тока базы. Результаты расчетов занесите в таблицу \ref{tab:9.2}.
+	\item Запишите выводы о зависимости коэффициента усиления NPN-транзистора от тока базы.
+
+\end{enumerate}
+
+\newpage
+
+\begin{figure}[h]
+    \centering
+    \begin{circuitikz}
+    \draw (0,0) node[npn, tr circle, xscale=-1](Q){};
+    \draw (Q.B) node[above,xshift=1mm,yshift=-1mm] {\text{Б}};
+    \draw (Q.E) node[above, xshift=-3mm, yshift=-2mm] {\text{Э}};
+    \draw (Q.C) node[above,  xshift=-3mm, yshift=-5mm] {\text{К}};
+    
+    \draw (Q.C) to[lamp] ++(0,2) coordinate(L_Col);
+    \draw (L_Col) -- ++(2,0)  coordinate(L_R);
+    \draw (L_Col) -- ++(-2,0) coordinate(L_B);
+    \draw (L_B) to[battery1] ++(0,-1)to[battery1] ++(0,-1)to[battery1] ++(0,-1)to[battery1] ++(0,-1) to[normal open switch, l=K] ++(2,0) coordinate(Bat_Em);
+    \draw (L_R)to[R, l = $1~\text{кОм}$] ++(0,-1.54) coordinate(Potent);
+    \draw (Potent) to[pR, name = P, mirror, l = $1~\text{кОм}$] ++(0,-2.46) --(Bat_Em)--(Q.E);
+    
+    \draw (Q.B) -- (P.wiper);
+    %\draw[red, thick] (0.6,2.1) rectangle (4.2,3.8);
+    
+    \end{circuitikz}
+    \caption{NPN-транзистор}
+    \label{fig:9.2}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\caption{Усиление с помощью NPN-транзистора}
+\label{tab:9.2}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\begin{tabular}[c]{@{}c@{}}№\end{tabular} & 
+\begin{tabular}[c]{@{}c@{}}Ток коллектора\\ $I_\text{К}$, А \end{tabular} & \begin{tabular}[c]{@{}c@{}}Ток базы\\ $I_\text{Б}$, А\end{tabular} & 
+\begin{tabular}[c]{@{}c@{}}Коэффициент усиления\\ $\beta$\end{tabular} \\ \hline
+
+1 & & & \\
+\hline
+2 & & & \\
+\hline
+3 & & & \\
+\hline
+4 & & & \\
+\hline
+5 & & & \\
+\hline
+\end{tabular}
+\end{table}
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+
+\subsection{Составной транзистор}
+
+\begin{enumerate}
+
+	\item Соберите схему, представленную на рисунке \ref{fig:9.3}.
+	\item Установите движок реостата крайнее нижнее положение. Укажите направление тока в ней.
+	\item Замкните выключатель К. Плавно перемещайте движок реостата из крайнего нижнего положения вверх. Для пяти положений движка реостата (при которых лампа горит) измерьте токи коллектора и базы. Результаты измерений занесите в таблицу \ref{tab:9.3}.
+	\item Рассчитайте коэффициент усиления составного транзистора, используя измеренные значения тока коллектора и тока базы. Результаты расчетов занесите в таблицу \ref{tab:9.3}.
+	\item Сравните значения коэффициентов усиления PNP и NPN транзисторов со значением коэффициента усиления составного транзистора. \label{trans}
+	\item Запишите выводы о зависимости коэффициента усиления составного транзистора от тока базы, а также результат сравнения из пункта \ref{trans}.
+\end{enumerate}
+
+\newpage
+
+\begin{figure}
+    \centering
+    \begin{circuitikz}
+        \draw (0,0) node[pnp, tr circle, xscale=-1](Q1){};
+        \draw (2,-1) node[npn, tr circle, xscale=-1](Q2){};
+        \draw (Q1.B) node[above,xshift=1mm,yshift=-1mm] {\text{Б}};
+        \draw (Q2.B) node[above,xshift=1mm,yshift=-5mm] {\text{Б}};
+        \draw (Q1.E) node[above, xshift=-3mm, yshift=-5mm] {\text{Э}};
+        \draw (Q2.E) node[above,xshift=-3mm, yshift=-1mm] {\text{Э}};
+        \draw (Q1.C) node[above,  xshift=-3mm, yshift=-2mm] {\text{К}};
+        \draw (Q2.C) node[above,xshift=-3mm, yshift=-5mm] {\text{К}};
+        \draw (Q2.B) -- ++(0.25,0) coordinate(p1) {};
+        \draw (Q1.C) |- (Q2.E);
+        \draw (Q1.B) -| (Q2.C);
+        \draw (Q1.E) -| ++(-2,-1) to[battery1] ++(0,-0.5)to[battery1, l=$\mathscr{E}$ ] ++(0,-0.5)to[battery1] ++(0,-0.5)to[battery1] ++(0,-0.5) -- ++(0,-1) coordinate(p2) {};
+        \draw (p2) to[normal open switch, l=$K$] ++(2,0) -- ++(2,0) coordinate(p3) {};
+        \draw (p3) to[lamp, l=$\text{Л}$] (Q2.E);
+        \draw (Q1.E) to[R, l=$1~\text{кОм}$, invert, a=R] ++(4,0) coordinate(p4) to[pR, name =P, mirror, l=$1~\text{кОм}$] ++(0,-3.54) coordinate(p5);
+        \draw (p3) -| (p5);
+        \draw (Q2.B) -- (P.wiper);
+    \end{circuitikz}
+    \caption{Каскад транзисторов}
+    \label{fig:9.3}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\caption{Усиление с помощью каскада транзисторов}
+\label{tab:9.3}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\begin{tabular}[c]{@{}c@{}}№\end{tabular} & 
+\begin{tabular}[c]{@{}c@{}}Ток коллектора\\ $I_\text{К}$, А \end{tabular} & \begin{tabular}[c]{@{}c@{}}Ток базы\\ $I_\text{Б}$, А\end{tabular} & 
+\begin{tabular}[c]{@{}c@{}}Коэффициент усиления\\ $\beta$\end{tabular} \\ \hline
+
+1 & & & \\
+\hline
+2 & & & \\
+\hline
+3 & & & \\
+\hline
+4 & & & \\
+\hline
+5 & & & \\
+\hline
+\end{tabular}
+\end{table}
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+

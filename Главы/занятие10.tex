@@ -1,0 +1,83 @@
+\newpage
+
+\section{Громкоговорители и микрофоны}    
+
+
+
+\subsection{Проверка работоспособности динамика}
+
+\begin{enumerate}
+    \itemСоберите схему, представленную на рисунке \ref{}. Укажите направление силы тока в ней при зажатой кнопке К.
+    \itemЗажмите кнопку К и услышьте звук.
+    \itemПодключите в цепь последовательно двигатель, чтобы получилась схема \ref{}. Укажите направление силы тока в ней при зажатой кнопке К.
+    \itemЗажмите кнопку К и услышьте звук. ОСТОРОЖНО притормозите двигатель и опишите наблюдения.
+    \itemЗапишите выводы о работе громкоговорителя в исследуемых схемах. 
+\end{enumerate}
+
+
+\begin{figure}[h]
+\begin{minipage}[h]{0.5\linewidth}
+\center{\begin{circuitikz} \draw
+(0,0) to[battery, l=$\mathscr{E}$,invert] (0,4) -- (4,4) to[loudspeaker] (4,0) to[push button,l=$K$, mirror](0,0)
+;
+\end{circuitikz}\\ а.}
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.5\linewidth}
+\center{\begin{circuitikz} 
+\draw
+(0,0) to[battery,l=$\mathscr{E}$, invert] (0,4) -- (6,4) to[loudspeaker] (6,0) to[push button,l=$K$, mirror](3,0) to[Telmech=M](0,0)
+;
+\end{circuitikz} \\ б.}
+\end{minipage}
+\caption{Громкоговоритель}
+\label{ris:10.1}
+\end{figure}
+
+
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\subsection{Светомузыка}
+
+\begin{enumerate}
+    \itemСоберите схему, представленную на рисунке \ref{}.
+    \itemЗамкните выключатель К. Установите движок реостата в крайнее нижнее положение. Отрегулируйте реостат: перемещайте движок реостата снизу вверх до тех пор, пока светодиод не начнет светиться (свечение должно быть достаточно тусклым).
+    \itemГромко хлопните в ладоши рядом с микрофоном и наблюдайте за свечением светодиода.
+    \itemВключите звуковую запись на ваш выбор (желательно с ярко выраженными битами) и поднесите динамик к микрофону. Наблюдайте за свечением светодиода в такт с битами.
+    \itemЗапишите выводы о принципах работы данной электросхемы.
+\end{enumerate}
+
+\newpage
+
+\begin{figure}
+    \centering
+    \begin{circuitikz}
+    \draw (6,1.25) node[pnp, tr circle] (T) {};   
+	\draw (T.B) node[above,xshift=-1mm,yshift=-1mm] {\text{Б}};
+        \draw (T.C) node[above,  xshift=3mm,yshift=-3mm] {\text{К}};
+    \draw (T.E) node[above, xshift=3mm,yshift=-5mm] {\text{Э}};
+    \draw(3,0) to[pR, name=P,mirror, l=$1~\text{кОм}$] (3,2.5);
+    \draw(0,0) --(0,1.5) to[battery,l=$\mathscr{E}$, invert] (0,2.1) to[battery, invert] (0,2.7) --(0,4) to[normal open switch, l=$K$] (2,4);
+    \draw (2,4)to[R, l=$R$] (6,4) to[empty led, fill=red] (T.E);
+    \draw (3,4)--(3,3.4) to[mic] (3,2.5);
+    \draw (P.wiper) -- (T.B) ; 
+    \draw (T.C)-- (6,0) -- (0,0);
+        
+        %(0,0) --(0,2.5)to[battery,l=$\mathscr{E}$, invert](0,3.1)to[battery, invert](0,3.7)--(0,6) to[normal open switch] (2,6) to[R] (6,6) to[empty led] 
+        
+    \end{circuitikz}
+    \caption{Светомузыка}
+    \label{fig:10.2}
+\end{figure}
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+

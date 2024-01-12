@@ -1,0 +1,286 @@
+\newpage
+
+\section{Резисторы, реостаты и потенциометры.}
+
+
+\subsection{Работа и мощность}
+
+Закон Джоуля-Ленца --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+Закона Джоуля-Ленца:
+
+\begin{tikzpicture}
+\draw (0,0) rectangle (6,2);
+\end{tikzpicture}
+\\
+Мощность --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+Формула Мощности:
+
+\begin{tikzpicture}
+\draw (0,0) rectangle (6,2);
+\end{tikzpicture}
+
+\subsection{Резистор}
+
+Резистор --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+Формула сопротивления проводника:
+
+\begin{tikzpicture}
+\draw (0,0) rectangle (6,2);
+%$R = \rho fraq{l}{S}$%
+\end{tikzpicture}
+ 
+\subsection{Реостат и потенциометр}
+
+Реостат --- \hrulefill%переменный резистр, управляющий током, изменяя сопротивление в цепи.
+
+\hrulefill
+\\
+Потенциометр --- \hrulefill %переменный резистор, действующий как переменный делитель напряжения.
+
+\hrulefill
+\\
+Различия и применение:
+\begin{enumerate}
+\item  \hrulefill
+%Реостаты обычно имеют две клеммы, тогда как потенциометры имеют три для более точного управления.
+
+\hrulefill
+\item \hrulefill 
+%Потенциометры находят применение в различных приложениях, таких как регулировка громкости и определение положения. Напротив, реостаты регулируют мощность в сильноточных приложениях, таких как диммеры и регуляторы скорости двигателя.
+
+\hrulefill
+\end{enumerate}
+
+\newpage
+
+\subsection{Резистор как ограничитель тока}
+\begin{enumerate}
+    \itemСоберите схему, указанную на рисунке \ref{fig:4.1}. Укажите в ней направление тока при замкнутом выключателе.
+    \itemИзмерьте значение ЭДС батареи и занесите это значение в таблицу.
+    \itemДля каждого сопротивления $R_1, R_2, R_3$ выполните следующее задание:
+    \begin{enumerate}
+        \itemИзмерьте силу тока в цепи $I_\text{изм}$.
+        \itemРассчитайте силу тока с помощью закона Ома $I_\text{расч}$.
+	\item Расчитайте, какая мощность рассеивается на резисторе с помощью формулы $P = UI$.
+        \itemЗанесите данные в таблицу \ref{tab:4.1}.
+    \end{enumerate}
+    \itemЗапишите выводы о зависимости силы тока в цепи от ее внешнего сопротивления. 
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \begin{circuitikz}[european] \draw
+(0,0)to[battery, l=$\mathscr{E}$, invert] (0,3) to[R, l=$R$] (4,3) -- (4,0) to[normal open switch, l=$K$, mirror](0,0)
+;
+\end{circuitikz}
+    \caption{Резистор как ограничитель тока}
+    \label{fig:4.1}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\caption{Резистор как ограничитель тока}
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+Схема & 
+\begin{tabular}{@{}c@{}}
+ЭДС батареи\\
+$\mathscr{E}$, В 
+\end{tabular} & 
+\begin{tabular}{@{}c@{}}
+Расчетная сила тока \\ в резисторе
+$I_\text{расч}, мА$
+\end{tabular} & 
+\begin{tabular}{@{}c@{}}
+Измеренная сила тока \\в резисторе
+$I_\text{изм}, мА$
+\end{tabular} & 
+\begin{tabular}{@{}c@{}}
+Мощность\\
+на резисторе $P$, Вт
+\end{tabular} \\
+\hline
+$R_1 = 1~kOm$   & & & & \\
+\hline
+$R_2 = 5.1~kOm$ & & & & \\
+\hline
+$R_3 = 56~kOm$  & & & & \\
+\hline
+\end{tabular}
+\label{tab:4.1}
+\end{table}
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\subsection{Реостат как ограничитель тока}
+\begin{enumerate}
+    \itemСоберите схему, указанную на рисунке \ref{fig:4.2}. Укажите в ней направление тока при замкнутом ключе.
+    \itemВыполните следующее задание для реостатов с пределом $1$ кОм и $10$ кОм:
+    \begin{enumerate}
+        \itemЗамкните ключ К. 
+        \itemУстановите ползунок реостата в крайнее левое положение А. 
+        \itemДвигая ползунок реостата из крайнего левого положения А в крайнее правое положение В. Измерьте сопротивление реостата между точками А и С с помощью омметра, а также силу тока в цепи для пяти различных положение движка реостата (включая крайнее левое и крайнее правое). 
+        \itemРезультаты измерений занесите в таблицу \ref{tab:4.2}
+    \end{enumerate}
+    \itemЗапишите вывод о том, как изменяется сила тока в цепи при движении ползунка реостата из крайнего левого положения А в крайнее правое положение В. 
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \begin{circuitikz}[european] \draw
+(0,0) -- (0,2) to[pR, name=P] (3,2);
+\draw(0,0) to[normal open switch, l=$K$](6,0) to[battery, l=$\mathscr{E}$, invert] (6,4) to[R, l = $R$, a=$100~\text{Ом}$](2,4) --(1.5,4)-- (P.wiper);
+\node[above,xshift=-2mm,yshift=-2mm] at (P.wiper) {B};
+\node[left,xshift=-5mm,yshift=-8mm] at (P.wiper) {A};
+\node[right, xshift=5mm,yshift=-8mm] at (P.wiper) {C};
+%\draw (P1.wiper) \node[right]  {P1};
+;
+\end{circuitikz}
+    \caption{Реостат как ограничитель тока}
+    \label{fig:4.2}
+\end{figure}
+
+\begin{table}[h]
+\caption{Реостат как ограничитель тока}
+\centering
+\begin{tabular}{@{}|c|c|c|c|c|c|@{}}
+\hline
+№ & \raisebox{1ex}[0cm][0cm]{Положение движка реостата}& \begin{tabular}[c]{@{}l@{}}Сопротивление \\ реостата, R Ом\end{tabular} & \begin{tabular}[c]{@{}l@{}}Сила тока\\ в цепи, I А\end{tabular} & \begin{tabular}[c]{@{}l@{}}Сопротивление \\ реостата, R Ом\end{tabular} & \begin{tabular}[c]{@{}l@{}}Сила тока\\ в цепи, I А\end{tabular} \\
+\cline{3-6}
+  & & \multicolumn{2}{|c|}{1 кОм} & \multicolumn{2}{c|}{10 кОм}  \\
+  \hline
+1 & крайнее левое & & & & \\
+\hline
+2 & промежуточное & & & & \\
+\hline
+3 & промежуточное&  & &  & \\
+\hline
+4 & промежуточное &  &  & & \\
+\hline
+5 & крайнее правое & & &  &\\
+\hline
+\end{tabular}
+\label{tab:4.2}
+\end{table}
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\subsection{Реостат как делитель напряжения}
+\begin{enumerate}
+    \itemСоберите схему, указанную на рисунке \ref{fig:4.3}.
+    \itemЗамкните переключатель К. Поставьте движок реостата в крайнее верхнее положение А. Укажите направление силы тока в ней.
+    \itemДвигая движок реостата из крайнего верхнего положения в крайнее нижнее, измерьте напряжения на светодиодах для четырех различных положений движка реостата (включая крайнее верхнее и крайнее нижнее). 
+    \itemРезультаты измерений занесите в таблицу \ref{tab:4.3}. 
+    \itemКакие светодиоды горят и от чего зависит яркость их свечения? Запишите ответ в выводе.
+    \itemЗапишите вывод о возможности использования реостата в качестве делителя напряжения.
+\end{enumerate}
+
+
+
+\begin{figure}
+    \centering
+    \begin{circuitikz}[european]
+    \draw (0,0) to[battery, invert,l=$\mathscr{E}$] (0,4) to[R, l = $R$, a=$100~\text{Ом}$](4,4) to[pR, name=P](4,0) to[normal open switch, mirror, l=$K$](0,0);
+    \draw (4,4) -- (6,4) to[empty led, fill=red] (6,2) to[empty led, fill=green](6,0) -- (4,0);
+    \draw (6,2) -- (P.wiper);
+    \node[right, xshift=-5mm,yshift=-8mm] at (P.wiper) {C};
+    \node[right, xshift=-1mm,yshift=2mm] at (P.wiper) {B};
+    \node[right, xshift=-5mm,yshift=8mm] at (P.wiper) {A};
+\end{circuitikz}
+    \caption{Делитель напряжения}
+    \label{fig:4.3}
+\end{figure}
+
+\newpage
+
+\begin{table}[h]
+\centering
+\caption{Реостат как делитель напряжения}
+\begin{tabular}{|c|c|cc|cc|}
+\hline
+\multirow{2}{*}{№} & \multirow{2}{*}{\begin{tabular}[c]{@{}c@{}}Положение\\ движка реостата\end{tabular}} & \multicolumn{2}{c|}{Красный светодиод} & \multicolumn{2}{c|}{Зеленый светодиод} \\ \cline{3-6} 
+ & & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Напряжение \\ $U_\text{кр}$, В\end{tabular}} & \begin{tabular}[c]{@{}c@{}}Горит \\ да/нет\end{tabular} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Напряжение\\ $U_\text{зел}$, В\end{tabular}} & \begin{tabular}[c]{@{}c@{}}Горит\\ да/нет\end{tabular} \\ 
+ \hline
+1& Крайнее левое& \multicolumn{1}{c|}{} && \multicolumn{1}{c|}{}&\\ 
+\hline
+2 & промежуточное& \multicolumn{1}{c|}{}& & \multicolumn{1}{c|}{}&                                                        \\ \hline
+3 & промежуточное& \multicolumn{1}{c|}{} & & \multicolumn{1}{c|}{} &                                                        \\ \hline
+4& промежуточное& \multicolumn{1}{c|}{}&  & \multicolumn{1}{c|}{}&                                                        \\ \hline
+5& Крайнее правое & \multicolumn{1}{c|}{}  & & \multicolumn{1}{c|}{}&                                                        \\ \hline
+\end{tabular}
+\label{tab:4.3}
+\end{table}
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\subsection{Двойной делитель напряжения}
+\begin{enumerate}
+    \itemСоберите схему, указанную на рисунке \ref{fig:4.4}.
+    \itemЗамкните выключатель К. Регулируя положения движков реостатов, установите их в таком положении, чтобы горели все светодиоды (при необходимости добавьте 1-2 батарейных отсека). 
+    \itemУкажите направление токов в схеме.
+    \itemИзмерьте значения напряжений на светодиодах, а также ЭДС батареи. 
+    \itemРезультаты измерения занесите в таблицу \ref{tab:4.4}. \itemПроверьте выполнение равенства $\mathscr{E}=U_\text{кр}+U_\text{жел}+U_\text{зел}$.
+    \itemЗапишите вывод о возможности использования реостатов в качестве управляющих элементов по распределению напряжения в нагрузках.
+\end{enumerate}
+
+\newpage
+
+\begin{figure}[h]
+    \centering
+    \begin{circuitikz}[european]
+    \draw (0,0)--(0,2)to[battery, invert,l=$\mathscr{E}$] (0,3)to[battery, invert,l=$\mathscr{E}$](0,4)--(0,6) 
+    
+    to[R, l = $R$, a=$100~\text{Ом}$](4,6)--(4,5) to[pR, name=P1, a=$1~\text{кОм}$](4,3)to[pR, name=P2, a=$1~\text{кОм}$](4,1) --(4,0)to[normal open switch, mirror, l=$K$](0,0);
+    
+    \draw (4,6) -- (6,6) to[empty led, fill=red] (6,4) to[empty led, fill=yellow](6,2)to[empty led, fill=green] (6,0) --(4,0);
+    \draw (6,2) -- (P2.wiper);
+    \draw (6,4) -- (P1.wiper);
+\end{circuitikz}
+    \caption{Двойной делитель напряжения}
+    \label{fig:4.4}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\caption{Двойной делитель напряжения}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\begin{tabular}[c]{@{}c@{}}ЭДС батареи\\ $\mathscr{E}$, В\end{tabular}  & \begin{tabular}[c]{@{}c@{}}Напряжение\\ $U_\text{кр}$, В\end{tabular} & \begin{tabular}[c]{@{}c@{}}Напряжение\\ $U_\text{жел}$, В\end{tabular} & \begin{tabular}[c]{@{}c@{}}Напряжение\\ $U_\text{зел}$, В\end{tabular} \\ \hline
+ & & & \\ \hline
+\end{tabular}
+\label{tab:4.4}
+\end{table}
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+

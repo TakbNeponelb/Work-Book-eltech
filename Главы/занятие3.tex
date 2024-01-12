@@ -1,0 +1,232 @@
+\section{Источники света. Введение в теорию полупроводников.}
+Лампа --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+\\
+Светодиод --- \hrulefill
+
+\hrulefill
+
+\hrulefill\\
+%полупроводниковый прибор с электронно-дырочным (PN) переходом, создающий оптическое излучение при пропускании через него электрического тока в прямом направлении.
+
+
+
+
+\subsection{PN-переход. Введение}
+
+Диод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+%двухэлектродный электронный компонент, обладающий различной электрической проводимостью в зависимости от полярности приложенного к диоду напряжения.
+\\
+Полупроводники --- \hrulefill
+
+\hrulefill
+\\
+Полупроводник N-типа --- \hrulefill
+
+\hrulefill
+\\
+Полупроводник P-типа --- \hrulefill
+
+\hrulefill
+\\
+Прямое и обратное подключение диода:
+
+\begin{figure}[h]
+\begin{minipage}[h]{0.5\linewidth}
+\center{\begin{circuitikz}
+\draw[line width = 0.3mm] (-1,1) -- (0,1); \draw[line width = 0.3mm] (6,1) -- (7,1);
+\draw[line width = 0.3mm] (3,2) -- (3,0);
+\draw[line width = 0.3mm] (-1,1) -- (-1,-1) to[battery] (7,-1) -- (7,1); 
+\draw[line width = 0.3mm] (0,0) rectangle (6,2);
+\end{circuitikz}}
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.5\linewidth}
+\center{\begin{circuitikz}
+\draw[line width = 0.3mm] (-1,1) -- (0,1); \draw[line width = 0.3mm] (6,1) -- (7,1);
+\draw[line width = 0.3mm] (3,2) -- (3,0);
+\draw[line width = 0.3mm] (-1,1) -- (-1,-1) to[battery, invert] (7,-1) -- (7,1); 
+\draw[line width = 0.3mm] (0,0) rectangle (6,2);
+\end{circuitikz}}
+\end{minipage}
+\end{figure}
+
+Главное свойство диода/светодиода --- \hrulefill
+
+\hrulefill
+
+\subsection{Параллельное и последовательное подключение светодиода.}
+
+\begin{enumerate}
+    \item Соберите по очереди схемы, указанные на рисунке \ref{ris:3.1}.
+    \itemИзмерьте ЭДС батареи.
+    \itemУкажите направление тока при всех замкнутых кнопках.
+    \itemЗамкните ключ К.
+    \itemДля каждого случая выполните следующее задание:
+    \begin{enumerate}
+        \itemПоочередно замыкая ключи (только для первого случая), измерьте напряжение и силу тока на каждом светодиоде.
+    \itemПоменяйте полярность источника на обратную.
+    \itemВыполните пункт (а) еще раз.
+    \end{enumerate}
+    \itemЗанесите все результаты в таблицу \ref{tab:3.1}.
+    \itemСделайте выводы по наблюдениям.
+    
+\end{enumerate}
+
+
+\begin{figure}[h]
+\begin{minipage}[h]{0.5\linewidth}
+\center{\begin{circuitikz}[european] \draw
+(0,0) to[battery,l=$\mathscr{E}$, invert] (0,4) to[R, l=$100~\text{Ом}$] (2,4) --(6,4)to[empty led, l=$\text{Кр}$,fill=red](6,2) to[push button, l=$K_3$](6,0) --(1,0) to[normal open switch, l=$K$, mirror](0,0) 
+(4,4)to[empty led, l=$\text{Жел}$,fill=yellow](4,2) to[push button, l=$K_2$](4,0)
+(2,4)to[empty led, l=$\text{Зел}$,fill=green](2,2) to[push button, l=$K_1$](2,0)
+;
+\end{circuitikz}\\а.}
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.5\linewidth}
+\center{\begin{circuitikz}[european] \draw
+(0,0) -- (0,0.4) to[battery, invert] (0,1)to[battery, l=$\mathscr{E}$, invert] (0,1.6) -- (0,2) to[R, l=$100~\text{Ом}$] (2,2) to[empty led, l=$\text{Кр}$,fill=red] (3.3,2) to[empty led, l=$\text{Жел}$,fill=yellow] (4.6,2)to[empty led, l=$\text{Зел}$,fill=green] (6,2) --
+  (6,2)-- (6,0) to[normal open switch, l=$K$, mirror](0,0)
+;
+\end{circuitikz}\\ б.}
+\end{minipage}
+\caption{Параллельное и последовательное подключение светодиода}
+\label{ris:3.1}
+\end{figure}
+
+\begin{table}[h]
+ \caption{Прямое и обратное подключение светодиода.}
+    \centering
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        Подключение  & Полярность & ЭДС батареи $\mathscr{E}$, В & $U_\text{кр}$, В & $U_\text{жел}$, В & $U_\text{зел}$, В   \\
+     
+        \hline
+       & Прямая  &   &  &  &  \\
+        \cline{2-6}
+        
+        \raisebox{1.5ex}[0cm][0cm]{Параллельно}
+        &Обратная  &   &  &  &  \\
+        \hline
+
+         & Прямая  &   &  &  &  \\
+        \cline{2-6}
+        \raisebox{1.5ex}[0cm][0cm]{Последовательно}
+        &Обратная  &   &  &  &  \\
+        \hline
+    \end{tabular}
+    \label{tab:3.1}
+\end{table}
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\subsection{Подключение светодиода с различным сопротивлением.}
+
+\begin{enumerate}
+    \itemСоберите схему, указанную на рисунке \ref{fig:3.2}.
+    \itemПри замкнутом ключе измерьте напряжение на каждом светодиоде.
+    \itemЗанесите результаты в таблицу \ref{tab:3.2}.
+    \itemЗапишите вывод о зависимости яркости светодиода от номинала сопротивления.
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \begin{circuitikz}[european] \draw
+(0,0)  to[battery, l= $\mathscr{E}$, invert](0,4)
+  -- (8,4)  to[empty led, l=$\text{Кр}_4$, fill=red] (8,2) to[R, l=$100~\text{кОм}$] (8,0)--(2,0)
+  to[normal open switch=$K$, mirror](0,0)
+  (6,4)  to[empty led, l=$\text{Кр}_3$,fill=red] (6,2) to[R, l=$10~\text{кОм}$] (6,0)
+  (4,4)  to[empty led, l=$\text{Кр}_2$,fill=red] (4,2) to[R, l=$1~\text{кОм}$] (4,0)
+  (2,4)  to[empty led, l=$\text{Кр}_1$,fill=red] (2,2) to[R, l=$100~\text{Ом}$] (2,0)
+;
+\end{circuitikz}
+    \caption{Подключение светодиода с различным сопротивлением}
+    \label{fig:3.2}
+\end{figure}
+
+\begin{table}[h]
+    \centering
+    \caption{Зависимость яркости светодиода от сопротивления.}
+    \begin{tabular}{|c|c|c|c|c|}
+    
+    \hline
+    Схема & $U_1$, В &$U_2$, В&$U_3$, В&$U_4$, В \\
+    \hline
+     & & & & \\
+    \raisebox{1.5ex}[0cm][0cm]{Ключ замкнут}
+    & & & & \\
+    \hline
+    \end{tabular}
+    
+    \label{tab:3.2}
+\end{table}
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\subsection{Поочередное свечение лампы и светодиода.}
+
+\begin{enumerate}
+    \item Соберите схему, указанную на рисунке \ref{fig:3.3}.
+    \itemЗамкните ключ К1, пронабдюдайте горение лампы и светодиода. 
+    \itemИзмерьте силу тока и напряжение на лампе и светодиоде. Занесите результаты в таблицу.
+    \itemЗамкните ключ К1 и К2, пронаблюдайте горение лампы и светодиода.
+    \itemИзмерьте силу тока и напряжение на лампе и светодиоде. Занесите результаты в таблицу \ref{tab:3.3}.
+    \itemЗапишите вывод о том, почему в одном случае горит только лампа, а в другом только светодиод.
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \begin{circuitikz}[european] \draw
+(0,0) to[lamp, l=$\text{Л}$] (0,2) to[battery,l=$\mathscr{E}$, invert] (0,4) to[normal open switch, l=$K_1$](3,4)--(6,4) to[push button, l=$K_2$] (6,0)--(0,0)
+(3,4)to[empty led, l=$\text{Кр}$, fill=red] (3,2) to[R, l=$100~\text{Ом}$](3,0)
+
+;
+\end{circuitikz}
+    \caption{Поочередное свечение светодиода и лампы}
+    \label{fig:3.3}
+\end{figure}
+
+\begin{table}[h]
+    \centering
+    \caption{Поочередное свечение лампы и светодиода.}
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+        Схема & Сила тока & Сила тока &Напряжение  &Напряжение \\
+        & в лампе $I_\text{л}$, А & в светодиоде $I_\text{св}$, А& на лампе $U_\text{л}$, В&на светодиоде $U_\text{св}$, В \\
+         \hline
+         К1 замкнут& & & & \\
+         К2 разомкнут& & & & \\
+         \hline
+         К1 замкнут& & & & \\
+         К2 замкнут& & & & \\
+         \hline
+    \end{tabular}
+    
+    \label{tab:3.3}
+\end{table}
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\newpage
+
+

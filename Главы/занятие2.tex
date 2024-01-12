@@ -1,0 +1,401 @@
+\section{Переключатели. Логические элементы.}
+
+Ползунковый переключатель -- \hrulefill
+
+\hrulefill
+
+Изображение на схеме:
+
+\begin{tikzpicture}
+\draw (0,0) rectangle (6,2);
+\end{tikzpicture}
+\\
+Геркон --- \hrulefill
+
+\hrulefill
+
+Изображение на схеме:
+
+\begin{tikzpicture}
+\draw (0,0) rectangle (6,2);
+\end{tikzpicture}
+
+\subsection{Логический элемент "НЕ".}
+
+\begin{enumerate}
+    \item Соберите схему, изображенную на рисунке \ref{ris:2.1}.
+    \itemЗаполните таблицу истинности \ref{tab:2.1}, проверьте ее с помощью схемы.
+\end{enumerate}
+
+\begin{figure}[h]
+\begin{minipage}[h]{0.5\linewidth}
+\center{\begin{circuitikz}[european] \draw
+(0,0) to[battery, invert] (0,2) to[R, l=$100~\text{Ом}$] (0,4) -- (2,4)
+to[empty led, a=Y, fill=red] (4,4) -- (4,0) -- (0,0)
+(2,4) -- (2,2.5) to[push button, a=X] (4,2.5) ;
+%
+\draw[red, dashed] 
+(1.5,5.1) --(1.5,1.7) -- (4.5,1.7) -- (4.5,5.1) -- (1.5,5.1) 
+;
+\end{circuitikz}}
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.5\linewidth}
+\center{\begin{tikzpicture}
+
+\draw (0,0) rectangle (1.5,1.5);
+\draw (0.75,0.5) node[above]{\text{НЕ}};
+\draw (-0.5,0.75) node[above]{$X$};
+\draw (2,0.75) node[above]{$Y$};
+\draw (-1,0.75) --(0,0.75);
+\draw (1.5,0.75) -- (2.5,0.75);
+\filldraw[fill=white] (1.57,0.75) circle (0.07);
+\draw[red, dashed] (-0.8,-0.2) rectangle (2.3,1.7);
+\end{tikzpicture}}
+\end{minipage}
+\caption{Логический элемент "НЕ"}
+\label{ris:2.1}
+\end{figure}
+
+
+
+\begin{table}[h]
+ \caption{Таблица истинности "НЕ"}
+    \centering
+    \begin{tabular}{|p{3cm}|p{3cm}|}
+        \hline
+        X  &  Y    \\
+     
+        \hline
+        & \\
+        \hline
+        & \\
+        \hline
+    \end{tabular}
+    \label{tab:2.1}
+\end{table}
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+
+\subsection{Логический элемент "И".}
+
+\begin{enumerate}
+    \item Соберите схему, изображенную на рисунке \ref{ris:2.2}.
+    \itemИзмерьте ЭДС источника.
+    \item Измерьте силу тока и напряжение светодиода, занесите значения в таблицу \ref{tab:2.2}.
+\end{enumerate}
+
+\begin{figure}[h]
+\begin{minipage}[h]{0.5\linewidth}
+\center{\begin{circuitikz}[european] \draw
+(0,0) to[battery, invert] (0,2) to[R = 100 Ом] (0,4) -- (2,4)
+to[empty led, a=Y, fill=red] (4,4) -- (4,0) to[push button, a=$X_1$, mirror](2.5,0)to[push button, a=$X_2$, mirror] (1,0) -- (0,0);
+\draw[red, dashed] (1,5.5) --(1,-1) -- (4.5,-1) -- (4.5,5.5) -- (1,5.5) ;
+\end{circuitikz}}
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.5\linewidth}
+\center{\begin{tikzpicture}
+\draw (0,0) rectangle (1.5,1.5);
+
+\draw (0.75,0.5) node[above]{\text{И}};
+\draw (-0.5,0.5) node[below]{$X_1$};
+\draw (-0.5,1) node[above]{$X_2$};
+\draw (2,0.75) node[above]{$Y$};
+
+\draw (-1,0.5) --(0,0.5);
+\draw (-1,1) --(0,1);
+
+\draw (1.5,0.75) -- (2.5,0.75);
+
+
+\draw[red, dashed] (-0.8,-0.2) rectangle (2.3,1.7);
+\end{tikzpicture}}
+\end{minipage}
+\caption{Логический элемент "И"}
+\label{ris:2.2}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\caption{Табица истинности "И"}
+\label{tab:2.2}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$X_1$ & $X_2$ & $Y$ & \begin{tabular}[c]{@{}c@{}}ЭДС батареи\\ $\mathscr{E}$, В\end{tabular} & \begin{tabular}[c]{@{}c@{}}Сила тока \\ в светодиоде\\ $I$, мА\end{tabular} & \begin{tabular}[c]{@{}c@{}}Напряжение \\ на светодиоде\\ $U$, В\end{tabular} \\ \hline
+0     & 0     &     &                                                                        &                                                                             &                                                                              \\ \cline{1-3} \cline{5-6} 
+0     & 1     &     &                                                                        &                                                                             &                                                                              \\ \cline{1-3} \cline{5-6} 
+1     & 0     &     &                                                                        &                                                                             &                                                                              \\ \cline{1-3} \cline{5-6} 
+1     & 1     &     &                                                                        &                                                                             &                                                                              \\ \hline
+\end{tabular}
+\end{table}
+
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+
+\subsection{Логический элемент "ИЛИ".}
+
+\begin{enumerate}
+    \item Соберите схему, изображенную на рисунке \ref{ris:2.3}.
+    \itemИзмерьте ЭДС источника.
+    \item Измерьте силу тока и напряжение светодиода, занесите значения в таблицу \ref{tab:2.3}.
+\end{enumerate}
+
+\begin{figure}[h]
+\begin{minipage}[h]{0.5\linewidth}
+\center{\begin{circuitikz}[european] \draw
+(0,0) to[battery, invert] (0,2) to[R = 100 Ом] (0,4) -- (2,4)
+to[empty led, a=Y, fill=red] (4,4) -- (4,0) to[push button, a=$X_2$, mirror](2.5,0) -- (1,0) -- (0,0);
+\draw (4,2)to[push button, a=$X_1$, mirror] (2.5,2) -- (2.5,0);
+\draw[red, dashed] (2,5.5) --(2,-1) -- (4.5,-1) -- (4.5,5.5) -- (2,5.5) ;
+\end{circuitikz}}
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.5\linewidth}
+\center{\begin{tikzpicture}
+\draw (0,0) rectangle (1.5,1.5);
+
+\draw (0.75,0.5) node[above]{\text{ИЛИ}};
+\draw (-0.5,0.5) node[below]{$X_1$};
+\draw (-0.5,1) node[above]{$X_2$};
+\draw (2,0.75) node[above]{$Y$};
+
+\draw (-1,0.5) --(0,0.5);
+\draw (-1,1) --(0,1);
+
+\draw (1.5,0.75) -- (2.5,0.75);
+
+
+\draw[red, dashed] (-0.8,-0.2) rectangle (2.3,1.7);
+\end{tikzpicture}}
+\end{minipage}
+\caption{Логический элемент "ИЛИ"}
+\label{ris:2.3}
+\end{figure}
+
+\newpag
+
+\begin{table}[h]
+\centering
+\caption{Табица истинности "ИЛИ"}
+\label{tab:2.3}
+\begin{tabular}{|c|c|c|c|c|c|}
+\hline
+$X_1$ & $X_2$ & $Y$ & \begin{tabular}[c]{@{}c@{}}Сила тока \\ в светодиоде\\ $I$, мА\end{tabular} & \begin{tabular}[c]{@{}c@{}}Напряжение \\ на светодиоде\\ $U$, В\end{tabular} \\ \hline
+0     & 0     &     &                                                                             &                                                                              \\ \hline
+0     & 1     &     &                                                                             &                                                                              \\ \hline
+1     & 0     &     &                                                                             &                                                                              \\ \hline
+1     & 1     &     &                                                                             &                                                                              \\ \hline
+\end{tabular}
+\end{table}
+
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\subsection{Логический элемент "И НЕ".}
+
+\begin{enumerate}
+    \item Соберите схему, изображенную на рисунке \ref{ris:2.4}.
+    \itemЗаполните таблицу истинности \ref{tab:2.4}, проверьте ее с помощью схемы.
+    
+\end{enumerate}
+
+\begin{figure}[h]
+\begin{minipage}[h]{0.5\linewidth}
+\center{\begin{circuitikz}[european] \draw
+(0,0) to[battery, invert] (0,2) to[R = 100 Ом] (0,4) -- (2,4)
+-- (4,4) -- (4,0) to[push button, a=$X_1$, mirror](2.5,0)to[push button, a=$X_2$, mirror] (1,0) -- (0,0);
+\draw (4,2)to[empty led, a=Y, fill=red, mirror] (1,2) -- (1,0);
+\draw[red, dashed] (0.8,3.3) --(0.8,-1) -- (4.5,-1) -- (4.5,3.3) -- (0.8,3.3) ;
+\end{circuitikz}}
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.5\linewidth}
+\center{\begin{tikzpicture}
+\draw (0,0) rectangle (1.5,1.5);
+
+\draw (0.75,0.5) node[above]{\text{И НЕ}};
+\draw (-0.5,0.5) node[below]{$X_1$};
+\draw (-0.5,1) node[above]{$X_2$};
+\draw (2,0.75) node[above]{$Y$};
+
+\draw (-1,0.5) --(0,0.5);
+\draw (-1,1) --(0,1);
+
+\draw (1.5,0.75) -- (2.5,0.75);
+
+\filldraw[fill=white] (1.57,0.75) circle (0.07);
+\draw[red, dashed] (-0.8,-0.2) rectangle (2.3,1.7);
+\end{tikzpicture}}
+\end{minipage}
+\caption{Логический элемент "И НЕ"}
+\label{ris:2.4}
+\end{figure}
+
+\begin{table}[h]
+ \caption{Таблица истинности "И НЕ".}
+    \centering
+    \begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|}
+        \hline
+        $X_1$ & $X_2$ & $Y$ \\ \hline
+0     & 0     &     \\ \hline
+0     & 1     &     \\ \hline
+1     & 0     &     \\ \hline
+1     & 1     &     \\ \hline
+    \end{tabular}
+    \label{tab:2.4}
+\end{table}
+
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\subsection{Логический элемент "ИЛИ НЕ".}
+
+\begin{enumerate}
+    \item Соберите схему, изображенную на рисунке \ref{fig:2.5}.
+    \itemЗаполните таблицу истинности \ref{tab:2.5}, проверьте ее с помощью схемы.
+\end{enumerate}
+
+
+\begin{figure}[h]
+\begin{minipage}[h]{0.5\linewidth}
+\center{\begin{circuitikz}[european] \draw
+(0,0) to[battery, invert] (0,2) to[R = 100 Ом] (0,4) -- (2,4)
+-- (4,4) -- (4,0) to[push button, a=$X_2$, mirror](2.5,0) -- (1,0) -- (0,0);
+\draw (4,1)to[push button, a=$X_1$, mirror] (2.5,1) -- (2.5,0);
+\draw (4,2.5)to[empty led, a=Y, fill=red, mirror] (2.5,2.5) -- (2.5,0);
+\draw[red, dashed] (2,3.7) --(2,-0.5) -- (4.5,-0.5) -- (4.5,3.7) -- (2,3.7) ;
+\end{circuitikz}}
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.5\linewidth}
+\center{\begin{tikzpicture}
+\draw (0,0) rectangle (1.5,1.5);
+
+\draw (0.75,0.5) node[above]{\text{ИЛИ НЕ}};
+\draw (-0.5,0.5) node[below]{$X_1$};
+\draw (-0.5,1) node[above]{$X_2$};
+\draw (2,0.75) node[above]{$Y$};
+
+
+
+\draw (-1,0.5) --(0,0.5);
+\draw (-1,1) --(0,1);
+
+\draw (1.5,0.75) -- (2.5,0.75);
+
+\filldraw[fill=white] (1.57,0.75) circle (0.07);
+\draw[red, dashed] (-0.8,-0.2) rectangle (2.3,1.7);
+\end{tikzpicture}}
+\end{minipage}
+\caption{Логический элемент "ИЛИ НЕ"}
+\label{fig:2.5}
+\end{figure}
+
+\begin{table}[!h]
+ \caption{Таблица истинности "ИЛИ НЕ".}
+    \centering
+    \begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|}
+        \hline
+        $X_1$ & $X_2$ & $Y$ \\ \hline
+0     & 0     &     \\ \hline
+0     & 1     &     \\ \hline
+1     & 0     &     \\ \hline
+1     & 1     &     \\ \hline
+    \end{tabular}
+    \label{tab:2.5}
+\end{table}
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\subsection{Ползунковый переключатель.}
+
+\begin{enumerate}
+    \itemСоберите схему, представленную на рисунке \ref{ris:2.6}.
+    \itemПереведите движок переключателя $K_2$ в нижнее положение. Замкните геркон $K_1$ и наблюдайте за свечением лампы. 
+    \itemПереместите движок переключателя $K_2$ в верхнее положение и пронаблюдайте работу звонка.
+    \itemЗапишите выводы о предназначениях ползункового переключателя в электротехнических схемах.
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+\begin{circuitikz} 
+\draw(6.5,2)  node[spdt] (Sw) {};
+\draw (Sw.in) node[above] {$K_2$};
+\draw(0,0) to[lamp, l=$\text{Л}$,fill=yellow] (7.1,0) -- (Sw.out 2);
+\draw(0,0) --(0,4) to[buzzer,l=$\text{З}$, fill=blue] (7.1,4) -- (Sw.out 1);
+\draw(0,2) to[normal open switch, l=$K_1$] (3,2)to[battery, invert] (3.6,2)to[battery, l=$\mathscr{E}$,invert](4.2,2);
+\draw (4.2,2)--(Sw.in);
+
+ \end{circuitikz}
+    \caption{Ползунковый переключатель}
+    \label{ris:2.6}
+\end{figure}
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\subsection{Коммутационная схема на двух переключателях}
+
+\begin{enumerate}
+	\item Соберите схему, представленную на рисунке  \ref{ris:2.7}.
+	\item Перемещая движки переключателей $K_1$ и $K_2$, убедитесь в возможности управления свечением лампы каждым из переключателей в отдельности.
+	\item Запишите вывод о возможности применения данного типа включения двух движковых переключателей.
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+\begin{circuitikz} 
+\draw (0,0) to[battery1, invert] (0,1)to[battery1, invert](0,2)to[battery1, invert](0,3)to[battery1, invert](0,4) -- (6,4) to[lamp, l = $\text{Л}$] (6,0);
+\draw (2,0) node[spdt] (Sw1) {}
+(Sw1.in) node[left,yshift=3mm,xshift=3mm] {$K_1$}
+(Sw1.out 1) node[right] {}
+(Sw1.out 2) node[right] {};
+\draw (4.5,0) node[above]{$K_2$};
+\draw (4,0) node[spdt, rotate=180] (Sw2) {}
+(Sw2.in) node[left] {}
+(Sw2.out 1) node[right] {}
+(Sw2.out 2) node[right] {};
+
+\draw (0,0) -- (Sw1.in);
+\draw (6,0) -- (Sw2.in);
+\draw (Sw1.out 1) -- (Sw2.out 2);
+\draw (Sw2.out 1) -- (Sw1.out 2);
+ \end{circuitikz}
+    \caption{Коммутационная схема на двух переключателях}
+    \label{ris:2.7}
+\end{figure}
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\newpage
+

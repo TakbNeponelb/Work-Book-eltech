@@ -1,0 +1,207 @@
+\newpage
+\section{Источники питания}
+
+
+\subsection{Последовательное подключение батарей.}
+
+\begin{enumerate}
+    \item Соберите по очереди схемы, изображенные на рисунке \ref{ris:image1}.
+    \item Сравните яркость лампы во всех трех случаях.
+    \item Укажите направление тока для каждой цепи.
+    \item Измерьте напряжение на лампе, напряжение на батарее, силу тока в цепи в каждом случае и занесите полученные значения в таблицу \ref{tab:1.1}.
+    \item Запишите вывод о полученных результатах.
+\end{enumerate}
+
+\begin{figure}[ht]
+\begin{minipage}[h]{0.3\linewidth}
+\center{
+\begin{circuitikz} \draw
+(0,0) to[lamp=$\text{Л}$, fill=yellow] (0,3)
+  -- (3,3) to[battery, l= $\mathscr{E}$]  (3,0)
+  to[normal open switch=$K$, mirror](0,0)
+;
+\end{circuitikz}
+\\ а.}
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.3\linewidth}
+\center{
+\begin{circuitikz} \draw
+(0,0) to[lamp=$\text{Л}$, fill=yellow] (0,3)
+  -- (3,3) -- (3,2.1) to[battery] (3,1.5) to[battery, l= $\mathscr{E}$] (3,0.9) -- (3,0)
+  to[normal open switch=$K$, mirror](0,0)
+;
+\end{circuitikz} \\ б.}
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.3\linewidth}
+\center{
+\begin{circuitikz} \draw
+(0,0) to[lamp=$\text{Л}$, fill=yellow] (0,3)
+  -- (3,3) -- (3,2.1) to[battery] (3,1.5) to[battery, l= $\mathscr{E}$, invert] (3,0.9) -- (3,0)
+  to[normal open switch=$K$, mirror](0,0)
+;
+\end{circuitikz} \\ в.}
+\end{minipage}
+\caption{Последовательное подключение источников тока.}
+\label{ris:image1}
+\end{figure}
+
+\begin{table}[h]
+    \caption{Последовательное подключение}
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+    
+    \hline
+    Схема & {ЭДС $\mathscr{E}$, В} & {Сила тока I, А} & {Напряжение U, В} \\
+    \hline    
+       a.  & & & \\ 
+          \hline 
+        б. & & & \\
+           \hline 
+        в. & & & \\ 
+    \hline   
+    \end{tabular}
+     \label{tab:1.1}
+\end{table}
+
+Вывод --- \hrulefill 
+
+\hrulefill 
+
+\hrulefill 
+
+
+\subsection{Параллельное подключение батарей.}
+
+\begin{enumerate}
+    \item Соберите по очереди схемы, изображенные на рисунке \ref{ris:parallel}.
+    \itemДля каждого случая выполните следующее задание.
+    \begin{enumerate}
+    \item Замкните сначала один ключ, пронаблюдайте яркость лампы.
+    \item Измерьте силу тока в цепи и напряжение на лампе. Занесите полученные данные в таблицу.
+    \item Замкните оба ключа, сравните яркость с предыдущим случаем.
+    \item Измерьте силу тока в цепи и напряжение на лампе. Занесите полученные данные в таблицу \ref{tab:1.2}.
+    \end{enumerate}
+    \itemЗапишите вывод о полученных результатах. 
+\end{enumerate}
+
+\newpage
+
+\begin{figure}[h]
+\begin{minipage}[h]{0.5\linewidth}
+\center{\begin{circuitikz} \draw
+(0,0) to[normal open switch=$K_1$] (0,2) to[battery, l=$\mathscr{E}_1$] (0,4) --
+  (4,4) to[lamp=$\text{Л}$,fill=yellow]  (4,0)
+  --(0,0)
+  (2,0) to[normal open switch=$K_2$] (2,2) to[battery, l=$\mathscr{E}_2$] (2,4)
+;
+\end{circuitikz}\\ а.}
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.5\linewidth}
+\center{\begin{circuitikz} \draw
+(0,0) to[normal open switch=$K_1$] (0,2) to[battery, l=$\mathscr{E}_1$] (0,4) --
+  (4,4) to[lamp=$\text{Л}$,fill=yellow]  (4,0)
+  --(0,0)
+  (2,0) to[normal open switch=$K_2$] (2,2) to[battery, l=$\mathscr{E}_2$, invert] (2,4)
+;
+\end{circuitikz} \\ б.}
+\end{minipage}
+\caption{Параллельное подключение источников тока.}
+\label{ris:parallel}
+\end{figure}
+
+\begin{table}[h]
+ \caption{Параллельное подключение источников}
+    \centering
+    \begin{tabular}{|c|c|c|c|}
+        \hline
+         Схема& Положение ключей & {Сила тока I, А} & {Напряжение U, В} \\
+        \hline  
+       & замкнут 1 ключ  &   &   \\
+        \cline{2-4}
+        \raisebox{1.5ex}[0cm][0cm]{2.а.} 
+        &замкнуто 2 ключа  &   &   \\
+        \hline
+         & замкнут 1 ключ  &   &   \\
+        \cline{2-4}
+        \raisebox{1.5ex}[0cm][0cm]{2.б.}
+        &замкнут 2 ключа  &   &   \\
+        \hline
+    \end{tabular}
+    \label{tab:1.2}
+\end{table}
+
+Вывод --- \hrulefill 
+
+\hrulefill 
+
+\hrulefill
+
+\subsection{Внутреннее сопротивление батареи.}
+
+\begin{enumerate}
+    \item Соберите схему, изображенную на рисунке \ref{ris:1.4}.
+    \item Замкните ключ
+    \itemИзмерьте ЭДС батареи и силу тока в цепи
+    \itemРассчитайте внутреннее сопротивление $r$ по формуле:
+    \begin{center}
+    \Large $r=\frac{\mathscr{E}}{I}$    
+    \end{center}
+    
+    \item Занесите значение в таблицу \ref{tab:1.4}.
+    \item Сделайте вывод о возможности пренебрежения внутреннего сопротивления, по сравнению с резисторами, входящими комплект.
+\end{enumerate}
+
+
+
+\begin{figure}[h]
+\center{\begin{circuitikz} \draw
+(0,0) to[rmeter, t=A] (0,4) to[normal open switch=$K$] (4,4) --
+  (4,4) to[battery1, l={$\mathscr{E}$, $r$}]  (4,0)
+  --(0,0)
+(4,3) -- (2,3) to[rmeter, t=V] (2,1) -- (4,1)
+ 
+;
+\end{circuitikz}}
+\caption{Внутреннее сопротивление источника.}
+\label{ris:1.4}
+\end{figure}
+
+\newpage
+
+\begin{table}[h]
+    \caption{Внутреннее сопротивление}
+    \centering
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \multicolumn{1}{|c|}{\begin{tabular}[c]{@{}c@{}}ЭДС батареи\\ $\mathscr{E}$, В\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Сила тока\\ короткого замыкания\\$I_\text{кз}$, А\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Внутреннее \\ сопротивление r, Ом\end{tabular}} \\ \hline
+    
+   &   &    \\
+    &   &    \\\hline
+   
+    \end{tabular}
+    
+     \label{tab:1.4}
+\end{table}
+
+Вывод --- \hrulefill 
+
+\hrulefill 
+
+\hrulefill 
+
+\subsection{*Температура нити накала лампы}
+
+
+\begin{enumerate}
+	\item 
+	\item Рассчитать температуру лампы накаливания для $\mathscr{E}_1 = 1.5 В$, $\mathscr{E}_2 = 3 В$, $\mathscr{E}_3 = 4.5 В$.
+		\item Сравнить значение $\mathscr{E}$, оценить их различие в процентах.   
+
+\end{enumerate}
+
+Известно, что нить накаливания лампы состоит из вольфрама. Чтобы измерить температуру свечения лампы, потребуется коэффициент сопротивления $\alpha = 0.0045 ~\frac{1}{K}$. А также формула зависимости сопротивления от температуры $\frac{R - R_0}{R_0} = \alpha t$, где $R$ -- искомое сопротивление, $R_0$ -- сопротивление при $t = 0^\circ C$
+
+\newpage

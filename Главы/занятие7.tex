@@ -1,0 +1,190 @@
+\newpage
+
+\section{Электродвигатель}
+
+
+\subsection{Закон Ампера}
+
+Закон Ампера --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+Сила Ампера:
+
+\begin{tikzpicture}
+\draw (0,0) rectangle (6,2);
+% $B = 1~\text{Тл}$
+\end{tikzpicture}
+
+\subsection{Устройство двигателя постоянного тока}
+
+\begin{figure}[h]
+\centering
+\begin{tikzpicture}
+
+%красный полюс
+
+\draw[fill=red] (0,0) rectangle (1,5);
+\draw[fill = red] (1,0) --  (2,1.6) -- (2,6.6) -- (1,5) -- (1,0); 
+\draw[fill = red]  (0,5) -- (1,6.6) -- (2,6.6) -- (1,5);
+\draw[white] (0.5,2.5) node {\Huge{N}} (1,2.5);
+\draw (0,5) -- (1,5);
+
+%синий полюс
+\draw[fill=blue] (8,0) rectangle (9,5);
+\draw[fill = blue] (9,0) --  (10,1.6) -- (10,6.6) -- (9,5) -- (9,0); 
+\draw[fill = blue]  (8,5) -- (9,6.6) -- (10,6.6) -- (9,5);
+\draw[white] (8.5,2.5) node {\Huge{S}} (9,2.5);
+\draw (8,5) -- (9,5);
+
+%рамка
+
+\draw[line width=0.3mm] (4.5,6.66) -- (4.5,5.105) -- (3.5,5.16) -- (3.5,1.16) -- (6.5,1) -- (6.5,5) -- (5.5,5.055) -- (5.5,6.6);
+
+\end{tikzpicture}
+\caption{Принцип работы электродвигателя}
+\label{fig:electro_engine}
+
+\end{figure}
+
+\subsection{Детали двигателя постоянного тока}
+
+Неподвижная часть --- \hrulefill 
+
+\hrulefill
+
+\hrulefill
+\\
+Подвижная часть --- \hrulefill 
+
+\hrulefill
+
+\hrulefill
+\\
+Почему появляется ток?
+
+\hrulefill 
+
+\hrulefill
+
+\hrulefill
+
+\subsection{Изменение направления и скорости вращения двигателя}
+
+\begin{enumerate}
+    \itemСоберите по очереди схемы, представленные на рисунке \ref{fig:7.1}. Укажите в каждом случае направление силы тока при зажатой кнопке К.
+    \itemДля каждой схемы выполните следующее занятие:
+    \begin{enumerate}
+        \itemУстановите пропеллер на двигатель. Зажмите кнопку К и наблюдайте за направлением и частотой вращения пропеллера.\label{7.1}
+        \itemРазверните двигатель на 180°и повторите пункт \ref{7.1}.
+    \end{enumerate}
+    \itemСделайте вывод о зависимости частоты вращения двигателя от приложенного напряжения и о зависимости направления вращения двигателя от направления тока. Запишите выводы. 
+
+\begin{figure}[h]
+\begin{minipage}[h]{0.5\linewidth}
+\center{\begin{circuitikz} 
+\draw
+(0,0) to[battery, invert] (0,4)to[Telmech=M](4,4) -- (4,0) to[push button, mirror, a=$K$] (0,0)
+;
+\end{circuitikz}\\ а.}
+\end{minipage}
+\hfill
+\begin{minipage}[h]{0.5\linewidth}
+\center{\begin{circuitikz} \draw
+(0,0) to[battery, invert] (0,4)to[Telmech=M](4,4) to[battery, invert] (4,0) to[push button, mirror, a=$K$] (0,0)
+;
+\end{circuitikz} \\ б.}
+\end{minipage}
+\caption{Изменение направления и скорости двигателя}
+\label{fig:7.1}
+\end{figure}
+
+
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\end{enumerate}
+
+\subsection{Электродвигатель в качестве генератора}
+
+\begin{enumerate}
+    \itemСоберите схему, представленную на рисунке \ref{fig:7.2}.
+    \itemВращайте вал двигателя по/против часовой стрелки с различной частотой и наблюдайте за показаниями вольтметра.
+    \itemЗапишите выводы о возможности применения электродвигателя в качестве генератора, о зависимости полярности создаваемого ЭДС от направления вращения двигателя, а также о зависимости величины создаваемого ЭДС от скорости вращения двигателя.
+\end{enumerate}
+
+\begin{figure}[h]
+\centering
+\begin{circuitikz} 
+\draw
+(0,0) -- (0,2)to[Telmech=M](4,2) -- (4,0) to[rmeter, t=$V$] (0,0)
+;
+\end{circuitikz}
+\caption{Электродвигатель в качестве генератора}
+\label{fig:7.2}
+\end{figure}
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\subsection{Регулирование частоты вращения двигателя и реверс двигателя}
+
+\begin{enumerate}
+    \itemСоберите схему, представленную на рисунке \ref{fig:7.3}. Укажите направление силы тока в цепи при верхнем/среднем/нижнем положении движка реостата. 
+    \itemЗамкните выключатель К. Перемещая движок реостата, наблюдайте за направлением и скоростью вращения электродвигателя.
+    \itemЗапишите выводы о возможности регулирования направления и частоты вращения двигателя.
+\end{enumerate}
+
+\begin{figure}[h]
+\centering
+\begin{circuitikz} 
+\draw (4,4) to[pR, name=R, mirror] (4,0);
+\draw (0,0)to[battery1, invert] (0,1)to[battery1, invert](0,2)to[battery1, invert](0,3) to[battery1, invert](0,4);
+\draw (0,2) to[normal open switch, l=$K$] (2,2)to[Telmech=M] (R.wiper);
+\draw (0,4) -- (4,4);
+\draw (0,0) -- (4,0);
+\end{circuitikz}
+\caption{Регулирование частоты вращения двигателя и реверс двигателя}
+\label{fig:7.3}
+\end{figure}
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+
+\subsection{Пуск двигателя}
+
+\begin{enumerate}
+    \itemСоберите схему, представленную на рисунке \ref{fig:7.4}. Укажите направление силы тока в ней при зажатой кнопке К.
+    \itemЗажмите кнопку К и наблюдайте за яркостью свечения лампы. Аккуратно и кратковременно (на одну секунду) затормозите вращение двигателя и наблюдайте за яркостью свечения лампы.
+    \itemЗапишите выводы о зависимости яркости свечения лампы от частоты вращения двигателя.
+\end{enumerate}
+
+\begin{figure}[h]
+\centering
+\begin{circuitikz} 
+\draw
+(0,0) to[battery, invert] (0,4)to[Telmech=M](4,4) to[lamp] (4,0) to[push button, mirror, a=$K$] (0,0)
+;
+\end{circuitikz}
+\caption{Пуск двигателя}
+\label{fig:7.4}
+\end{figure}
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill

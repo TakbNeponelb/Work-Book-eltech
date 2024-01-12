@@ -1,0 +1,120 @@
+\newpage
+
+\section{Фоторезистор}    
+
+
+
+\subsection{Устройство фоторезистора}
+
+Фоторезистор --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+
+\begin{figure}[h]
+    \centering
+    \begin{circuitikz}
+        \draw (0,0)--(0,0.7)--(8,0.7)--(8,0)--(0,0);
+	\draw (0,0.7) -- (5,3) -- (13,3) -- (8,0.7);
+	\draw (13,3) -- (13,2.3) -- (8,0);
+    \end{circuitikz}
+\caption{Принцип работы фоторезистора}
+\end{figure}
+
+Объяснение:
+
+\hrulefill
+
+\hrulefill
+
+\hrulefill
+
+
+\subsection{Проверка зависимости сопротивления фоторезистора от освещенности}
+
+\begin{enumerate}
+    \itemСоберите схему, представленную на рисунке \ref{ris:11.2}.
+    \itemПосветите фонариком на фоторезистор. Подкладывая тетрадные листы между фонариком и фоторезистором, наблюдайте за изменением сопротивления фоторезистора. Результаты измерения сопротивления фоторезистора с помощью омметра занесите в таблицу \ref{tab:11.2}.
+    \itemЗакройте фоторезистор пальцем и запишите показание фоторезистора в таблицу.  
+    \itemЗапишите выводы о зависимости сопротивления фоторезистора от освещенности и о пропускаемой способности света через палец.
+\end{enumerate}
+
+
+\begin{figure}[h]
+    \centering
+    \begin{circuitikz}[european resistors,
+    bigldR/.style={ldR, bipoles/length=2cm}]
+    \draw
+(0,0) to[bigldR] (0,4) -- (4,4) to[rmeter, t=$\Omega$, bipoles/length=3cm](4,0) -- (0,0)
+;
+\end{circuitikz}
+    \caption{Зависимость сопротивления}
+    \label{ris:11.2}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\caption{Зависимость сопротивления фоторезистора от освещенности}
+\label{tab:11.2}
+\begin{tabular}{|c|c|}
+\hline
+Количество тетрадных листов, шт & Сопротивление фоторезистора, Ом \\ \hline
+0                               &                                 \\ \hline
+5                               &                                 \\ \hline
+10                              &                                 \\ \hline
+Полностью закрыт от света       &                                 \\ \hline
+Палец                           &                                 \\ \hline
+\end{tabular}
+\end{table}
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+
+
+\subsection{Автоматический уличный фонарь}
+
+\begin{enumerate}
+    \itemСоберите схему, представленную на рисунке \ref{}.
+    \itemЗамкните выключатель К. Постепенно заслоните фоторезистор и наблюдайте за яркостью свечения лампы.
+    \itemПоменяйте местами резистор и фоторезистор и повторите пункт 2.
+    \itemЗапишите выводы о возможности применения фоторезистора в конструкции автоматического уличного фонаря.
+\end{enumerate}
+\begin{figure}[h]
+    \centering
+    \begin{circuitikz}
+        \draw (0,0) node[pnp, tr circle, xscale=-1](Q1){};
+        \draw (2,-1) node[npn, tr circle, xscale=-1](Q2){};
+        \draw (Q1.B) node[above,xshift=1mm,yshift=-1mm] {\text{Б}};
+        \draw (Q2.B) node[above,xshift=1mm,yshift=-5mm] {\text{Б}};
+        \draw (Q1.E) node[above, xshift=-3mm, yshift=-5mm] {\text{Э}};
+        \draw (Q2.E) node[above,xshift=-3mm, yshift=-1mm] {\text{Э}};
+        \draw (Q1.C) node[above,  xshift=-3mm, yshift=-2mm] {\text{К}};
+        \draw (Q2.C) node[above,xshift=-3mm, yshift=-5mm] {\text{К}};
+        \draw (Q2.B) -- ++(0.25,0)coordinate(p1) {};
+        \draw (Q1.C) |- (Q2.E);
+        \draw (Q1.B) -| (Q2.C);
+        \draw (Q1.E) -| ++(-2,-1) to[battery1] ++(0,-0.5)to[battery1, l=$\mathscr{E}$ ] ++(0,-0.5)to[battery1] ++(0,-0.5)to[battery1] ++(0,-0.5) -- ++(0,-1)coordinate(p2) {};
+        \draw (p2) to[normal open switch, l=$K$] ++(2,0) -- ++(2,0)coordinate(p3) {};
+        \draw (p3) to[lamp, l=$\text{Л}$] (Q2.E);
+        \draw (p3) -| ++(1.09,0) to[ldR, mirror] (p1);
+        \draw (Q1.E) -- ++(3.09,0) to[R, l={{{{\rotatebox[origin=c]{-90}{$100~\text{кОм}$}}}}}, invert, a=R] (p1);
+    \end{circuitikz}
+    \caption{Автоматический уличный фонарь}
+    \label{fig:11.1}
+\end{figure}
+
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+
+

@@ -1,0 +1,223 @@
+\section{Введение}
+
+
+
+\setlength\parindent{24pt}
+\subsection{Электрический ток}
+Электрический ток --- \hrulefill
+%Упорядоченное (направленное) движение заряженных частиц
+
+\hrulefill
+\\
+Условия возникновения электрического тока:
+\begin{enumerate}
+    \item\hrulefill% Наличие свободных заряженных частиц (носителей заряда).
+    \item\hrulefill%Наличие силы, действующей на заряженные частицы (носители заряда) в определённом направлении. $\vec F =q \vec E $
+    \item\hrulefill %Замкнутость цепи
+\end{enumerate}
+
+\subsection{Сила тока}
+Сила тока --- %скалярная физическуая величина, равная отношению заряда ∆q, переносимого через поперечное сечение проводника за промежуток времени ∆t, к величине этого промежутка. Измеряется в амперах [А].
+\hrulefill 
+
+\hrulefill
+
+\hrulefill 
+
+Формула силы тока: 
+
+\begin{tikzpicture}
+\draw (0,0) rectangle (6,2);
+% $I = fraq{\Delta q}{\Delta t}$
+\end{tikzpicture}
+
+
+\subsection{Напряжение}
+Напряжение --- %Отношение работы электрического поля по перемещению электрического заряда между двумя точками цепи к этому заряду. Измеряется в вольтах [В].
+\hrulefill 
+
+\hrulefill 
+
+\hrulefill 
+
+Формула напряжения: 
+
+\begin{tikzpicture}
+\draw (0,0) rectangle (6,2);
+% $U = fraq{A}{q}$
+\end{tikzpicture}
+\subsection{ЭДС}
+ЭДС --- \hrulefill
+%Электродвижущая сила E равна отношению работы Aст сторонних сил 
+%по перемещению положительного заряда q вдоль замкнутой цепи к этому заряду.
+
+\hrulefill
+\\
+Отличие напряжения от ЭДС:
+\begin{enumerate}
+    \item \hrulefill
+
+    \hrulefill
+    \item \hrulefill
+
+    \hrulefill
+\end{enumerate}
+%Электродвижущая сила зависит от источника питания, а напряжение зависит от подключенной нагрузки и тока, протекающего по цепи.
+%Электродвижущая сила это физическая величина, характеризующая работу сторонних сил неэлектрического происхождения, происходящих в цепях постоянного и переменного тока.
+
+\subsection{Закон Ома для участка цепи}
+%\begin{center}
+    %\quote{\textit{Знает каждый инженер - сила %тока $''\text{У}~''$~на~$''\text{Эр}~''$!}}
+%\end{center}
+
+Закон Ома для участка цепи --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+Формула:
+
+\begin{tikzpicture}
+\draw (0,0) rectangle (6,2);
+% $I = \fraq{U}{R}$
+\end{tikzpicture}
+
+
+\subsection{Закон Ома для полной цепи}
+%\begin{center}
+    %\quote{\textit{Знает каждый инженер - сила %тока $''\text{У}~''$~на~$''\text{Эр}~''$!}}
+%\end{center}
+
+Закон Ома для полной цепи --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+Формула:
+
+\begin{tikzpicture}
+\draw (0,0) rectangle (6,2);
+% $I = \fraq{\mathscr{E}}{R+r}$
+\end{tikzpicture}
+%
+%\begin{table}[h]
+ %   \centering
+  %  \begin{tabular}{|p{5cm}|p{5cm}|}
+   % \hline
+    %    Участка цепи &  Полной цепи\\
+    %\hline    
+     %    & \\  % $I = fraq{U}{R}$
+      %   &\\ % $I = fraq{\xi}{R+r}$
+       %  &\\
+        % &\\
+   % \hline   
+    %\end{tabular}
+%\end{table}
+
+
+\subsection{Мультиметр}
+Мультиметр --- \hrulefill 
+
+\hrulefill 
+
+\hrulefill 
+
+Измерение силы тока
+
+\begin{tikzpicture}
+\draw (0,0) rectangle (9,5);
+% $U = fraq{A}{q}$
+\end{tikzpicture}
+\\
+Мультиметр подключается --- \hrulefill
+\\
+Щупы вставляются в клемы при токе порядка $100 mA$:
+
+Черный -- \hrulefill
+
+Красный -- \hrulefill
+\\
+При токе порядка $1 A$:
+
+Черный -- \hrulefill
+
+Красный -- \hrulefill
+
+Измерение напряжения
+
+\begin{tikzpicture}
+\draw (0,0) rectangle (9,5);
+% $U = fraq{A}{q}$
+\end{tikzpicture}
+\\
+Мультиметр подключается -- \hrulefill
+\\
+Щупы вставляются в клемы:
+
+Черный -- \hrulefill
+
+Красный -- \hrulefill
+
+
+\subsection{Схематическое обозначение электронных компонентов}
+
+\begin{circuitikz}[european]
+\centering
+\draw (0,0) -- (3,0); 				\draw (6,0) to[lamp] (9,0); 		\draw (12,0) to[empty led] (15,0);
+\draw (0,-2) to[normal open switch] (3,-2); 	\draw (6,-2) to[buzzer] (9,-2); 		\draw(12,-2) to[C] (15,-2);
+\draw (0,-4)  to[push button](3,-4); 		\draw (6,-4) to[R] (9,-4);			\draw (12,-4) to[cute inductor] (15,-4);
+\draw (0,-6) to[reed](3,-6); 			\draw (6,-6) to[pR] (9,-6);		\draw (12,-6) to[mic] (15,-6);
+\draw (0,-8) to[battery1](3,-8); 			\draw (6,-8) to[empty diode] (9,-8);	\draw(12,-8)to[loudspeaker](15,-8);
+\end{circuitikz}
+
+
+\subsection{Первая цепь. Измерение силы тока и напряжения}
+
+
+\begin{enumerate}
+    \item Соберите схему, изображенную на рисунке %\ref{fig:fcircuit}.
+    \item Измерьте силу тока и напряжение на лампе.
+    \item Рассчитайте сопротивление лампы по закону Ома для участка цепи.
+    \item Занесите значения в таблицу %\ref{tab:0.1}.
+    \item Предположите и запишите в вывод, что нужно измерить, чтобы рассчитать сопротивление лампы по закону Ома для полной цепи.
+\end{enumerate}
+
+\begin{figure}[h]
+    \centering
+    \begin{circuitikz} \draw
+	(0,0) to[lamp=$\text{Л}$, fill=yellow] (0,4)
+	  -- (4,4) to[battery1, l= $\mathscr{E}$] (4,0)
+	  to[normal open switch=$K$, mirror](0,0)
+	;
+    \end{circuitikz}
+    \caption{Измерение силы тока и напряжения}
+    %\label{fig:fcircuit}
+\end{figure}
+
+
+
+\begin{table}[h]
+    \caption{Измерение силы тока и напряжения.}
+    %\label{tab:0.1}
+    \centering
+    \begin{tabular}{|c|c|с|}
+    \hline
+       Сила тока I, А  & Напряжение U, В & Сопротивление R, Ом \\
+    \hline
+        & & \\
+        & & \\
+    \hline     
+    \end{tabular}
+    
+\end{table}
+
+
+Вывод --- \hrulefill
+
+\hrulefill
+
+\hrulefill
+
+\newpage
